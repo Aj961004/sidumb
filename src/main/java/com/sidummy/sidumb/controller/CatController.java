@@ -2,7 +2,6 @@ package com.sidummy.sidumb.controller;
 
 import com.sidummy.sidumb.model.dto.*;
 import com.sidummy.sidumb.model.entity.CatPhotos;
-import com.sidummy.sidumb.model.entity.Webtoon;
 import com.sidummy.sidumb.repository.CatRepository;
 import com.sidummy.sidumb.service.StorageService;
 import org.springframework.beans.factory.annotation.Autowired;

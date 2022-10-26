@@ -72,7 +72,7 @@ public class WebtoonController {
             response.setMessages("Data Berhasil Diupdate");
             response.setData(webtoon);
         } else {
-            response.setMessages("Data Tidak Berhasil DIupdate");
+            response.setMessages("Data Tidak Berhasil Diupdate");
             response.setData(webtoon);
         }
 
