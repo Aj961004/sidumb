@@ -57,7 +57,7 @@ public class CatController {
         return list;
     }
 
-    @GetMapping("/artistList")
+    @GetMapping("/catArtistList")
     public List<CatArtistDto> getListArtist(){
         List<CatArtistDto> list = new ArrayList<>();
         for (CatPhotos m : catRepository.findAll()){
