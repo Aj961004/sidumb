@@ -122,6 +122,21 @@ public class WebtoonController {
 
     }
 
+    @GetMapping("/bystatus/{status}")
+    public DefaultResponse getByStatus(@PathVariable String status) {
+        DefaultResponse df = new DefaultResponse();
+        Optional<Webtoon> optional = webtoonRepository.findByStatus(status);
+        if (optional.isPresent()) {
+            df.setMessages("Data Ditemukan.");
+            df.setData(convertEntityToDto(optional.get()));
+        } else {
+            df.setMessages("Data Tidak Ada.");
+        }
+        return df;
+
+    }
+
+
 
 
     public Webtoon convertDtoToEntity(WebtoonDto dto) {
