@@ -97,7 +97,7 @@ public class CatController {
 
     }
 
-    @GetMapping("/byname/{breeds}")
+    @GetMapping("/bybreeds/{breeds}")
     public DefaultResponse getByCatBreeds(@PathVariable String breeds) {
         DefaultResponse df = new DefaultResponse();
         Optional<CatPhotos> optional = catRepository.findByBreeds(breeds);
