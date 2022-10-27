@@ -93,34 +93,34 @@ public class WebtoonController {
         return df;
 
     }
-//
-//    @GetMapping("/byregion/{originCountry}")
-//    public DefaultResponse getByCountry(@PathVariable String originCountry) {
-//        DefaultResponse df = new DefaultResponse();
-//        Optional<Webtoon> optional = webtoonRepository.findByOriginCountry(originCountry);
-//        if (optional.isPresent()) {
-//            df.setMessages("Data Ditemukan.");
-//            df.setData(convertEntityToDto(optional.get()));
-//        } else {
-//            df.setMessages("Data Tidak Ada.");
-//        }
-//        return df;
-//
-//    }
-//
-//    @GetMapping("/byplatform/{platform}")
-//    public DefaultResponse getByPlatform(@PathVariable String platform) {
-//        DefaultResponse df = new DefaultResponse();
-//        Optional<Webtoon> optional = webtoonRepository.findByPlatform(platform);
-//        if (optional.isPresent()) {
-//            df.setMessages("Data Ditemukan.");
-//            df.setData(convertEntityToDto(optional.get()));
-//        } else {
-//            df.setMessages("Data Tidak Ada.");
-//        }
-//        return df;
-//
-//    }
+
+    @GetMapping("/byregion/{originCountry}")
+    public DefaultResponse getByCountry(@PathVariable String originCountry) {
+        DefaultResponse df = new DefaultResponse();
+        Optional<Webtoon> optional = webtoonRepository.findByOriginCountry(originCountry);
+        if (optional.isPresent()) {
+            df.setMessages("Data Ditemukan.");
+            df.setData(convertEntityToDto(optional.get()));
+        } else {
+            df.setMessages("Data Tidak Ada.");
+        }
+        return df;
+
+    }
+
+    @GetMapping("/byplatform/{platform}")
+    public DefaultResponse getByPlatform(@PathVariable String platform) {
+        DefaultResponse df = new DefaultResponse();
+        Optional<Webtoon> optional = webtoonRepository.findByPlatform(platform);
+        if (optional.isPresent()) {
+            df.setMessages("Data Ditemukan.");
+            df.setData(convertEntityToDto(optional.get()));
+        } else {
+            df.setMessages("Data Tidak Ada.");
+        }
+        return df;
+
+    }
 
     @GetMapping("/bystatus/{status}")
     public DefaultResponse getByStatus(@PathVariable String status) {
