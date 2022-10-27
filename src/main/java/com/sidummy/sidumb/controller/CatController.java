@@ -2,6 +2,7 @@ package com.sidummy.sidumb.controller;
 
 import com.sidummy.sidumb.model.dto.*;
 import com.sidummy.sidumb.model.entity.CatPhotos;
+import com.sidummy.sidumb.model.entity.Sports;
 import com.sidummy.sidumb.repository.CatRepository;
 import com.sidummy.sidumb.service.StorageService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -80,6 +81,34 @@ public class CatController {
         }
 
         return response;
+    }
+
+    @GetMapping("/byname/{catName}")
+    public DefaultResponse getByCatName(@PathVariable String catName) {
+        DefaultResponse df = new DefaultResponse();
+        Optional<CatPhotos> optional = catRepository.findByCatName(catName);
+        if (optional.isPresent()) {
+            df.setMessages("Data Ditemukan.");
+            df.setData(convertEntityToDtoArtist(optional.get()));
+        } else {
+            df.setMessages("Data Tidak Ada.");
+        }
+        return df;
+
+    }
+
+    @GetMapping("/byname/{breeds}")
+    public DefaultResponse getByCatBreeds(@PathVariable String breeds) {
+        DefaultResponse df = new DefaultResponse();
+        Optional<CatPhotos> optional = catRepository.findByBreeds(breeds);
+        if (optional.isPresent()) {
+            df.setMessages("Data Ditemukan.");
+            df.setData(convertEntityToDtoBreeds(optional.get()));
+        } else {
+            df.setMessages("Data Tidak Ada.");
+        }
+        return df;
+
     }
 
 

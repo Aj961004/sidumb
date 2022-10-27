@@ -2,6 +2,7 @@ package com.sidummy.sidumb.controller;
 
 import com.sidummy.sidumb.model.dto.DefaultResponse;
 import com.sidummy.sidumb.model.dto.WebtoonDto;
+import com.sidummy.sidumb.model.entity.Sports;
 import com.sidummy.sidumb.model.entity.Webtoon;
 import com.sidummy.sidumb.repository.WebtoonRepository;
 import com.sidummy.sidumb.service.StorageService;
@@ -77,6 +78,20 @@ public class WebtoonController {
         }
 
         return response;
+    }
+
+    @GetMapping("/byname/{webtoonName}")
+    public DefaultResponse getByNameToon(@PathVariable String webtoonName) {
+        DefaultResponse df = new DefaultResponse();
+        Optional<Webtoon> optional = webtoonRepository.findByWebtoonName(webtoonName);
+        if (optional.isPresent()) {
+            df.setMessages("Data Ditemukan.");
+            df.setData(convertEntityToDto(optional.get()));
+        } else {
+            df.setMessages("Data Tidak Ada.");
+        }
+        return df;
+
     }
 
 
