@@ -80,6 +80,20 @@ public class SportsController {
         return response;
     }
 
+    @GetMapping("/byname/{sportsName}")
+    public DefaultResponse getByNameSports(@PathVariable String sportsName) {
+        DefaultResponse df = new DefaultResponse();
+        Optional<Sports> optional = sportsRepository.findBySportsName(sportsName);
+        if (optional.isPresent()) {
+            df.setMessages("Data Ditemukan.");
+            df.setData(convertEntityToDto(optional.get()));
+        } else {
+            df.setMessages("Data Tidak Ada.");
+        }
+        return df;
+
+    }
+
     public Sports convertDtoToEntity(SportsDto dto){
         Sports sports = new Sports();
         sports.setIdSports(dto.getIdSports());
