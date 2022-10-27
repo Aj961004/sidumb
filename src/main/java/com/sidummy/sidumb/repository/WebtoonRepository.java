@@ -8,4 +8,8 @@ import java.util.Optional;
 public interface WebtoonRepository extends JpaRepository<Webtoon,Integer> {
 
     Optional<Webtoon> findByWebtoonName (String webtoonName);
+
+    Optional<Webtoon> findByOriginCountry (String originCountry);
+
+    Optional<Webtoon> findByPlatform (String platform);
 }
