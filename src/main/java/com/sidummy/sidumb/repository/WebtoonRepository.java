@@ -9,9 +9,9 @@ public interface WebtoonRepository extends JpaRepository<Webtoon,Integer> {
 
     Optional<Webtoon> findByWebtoonName (String webtoonName);
 
-    Optional<Webtoon> findByOriginCountry (String originCountry);
-
-    Optional<Webtoon> findByPlatform (String platform);
+//    Optional<Webtoon> findByOriginCountry (String originCountry);
+//
+//    Optional<Webtoon> findByPlatform (String platform);
 
     Optional<Webtoon> findByStatus (String status);
 }
