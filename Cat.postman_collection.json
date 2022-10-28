@@ -1,0 +1,186 @@
+{
+	"info": {
+		"_postman_id": "9444894e-97a5-46b2-bb77-33171bc3bb08",
+		"name": "Cat",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21894009"
+	},
+	"item": [
+		{
+			"name": "Register Cat",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"catName\" : \"toby\",\r\n    \"breeds\" : \"british shorthair\",\r\n    \"url\" : \"https://www.litter-robot.com/media/blog/frederic-christian-britishshorthair2.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sidumb.herokuapp.com/cat/save",
+					"protocol": "https",
+					"host": [
+						"sidumb",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"cat",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Cat",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idCat\" : 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sidumb.herokuapp.com/cat/delete",
+					"protocol": "https",
+					"host": [
+						"sidumb",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"cat",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Breeds",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sidumb.herokuapp.com/cat/breedList",
+					"protocol": "https",
+					"host": [
+						"sidumb",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"cat",
+						"breedList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Artist Cat",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sidumb.herokuapp.com/cat/catArtistList",
+					"protocol": "https",
+					"host": [
+						"sidumb",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"cat",
+						"catArtistList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Cat",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idCat\" : 1,\r\n    \"catName\" : \"paijo\",\r\n    \"breeds\" : \"british shorthair\",\r\n    \"url\" : \"https://www.litter-robot.com/media/blog/frederic-christian-britishshorthair2.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sidumb.herokuapp.com/cat/update",
+					"protocol": "https",
+					"host": [
+						"sidumb",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"cat",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Call One Breeds",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sidumb.herokuapp.com/cat/bybreeds/angora",
+					"protocol": "https",
+					"host": [
+						"sidumb",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"cat",
+						"bybreeds",
+						"angora"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Call One Name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sidumb.herokuapp.com/cat/byname/lulu",
+					"protocol": "https",
+					"host": [
+						"sidumb",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"cat",
+						"byname",
+						"lulu"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

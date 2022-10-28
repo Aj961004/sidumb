@@ -1,0 +1,96 @@
+openapi: 3.0.0
+info:
+  title: Cat
+  version: 1.0.0
+servers:
+  - url: 'https://sidumb.herokuapp.com'
+paths:
+  /cat/save:
+    post:
+      tags:
+        - default
+      summary: Register Cat
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                catName: toby
+                breeds: british shorthair
+                url: 'https://www.litter-robot.com/media/blog/frederic-christian-britishshorthair2.jpg'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /cat/delete:
+    delete:
+      tags:
+        - default
+      summary: Delete Cat
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /cat/breedList:
+    get:
+      tags:
+        - default
+      summary: List Breeds
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /cat/catArtistList:
+    get:
+      tags:
+        - default
+      summary: List Artist Cat
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /cat/update:
+    put:
+      tags:
+        - default
+      summary: Update Cat
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                idCat: 1
+                catName: paijo
+                breeds: british shorthair
+                url: 'https://www.litter-robot.com/media/blog/frederic-christian-britishshorthair2.jpg'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /cat/bybreeds/angora:
+    get:
+      tags:
+        - default
+      summary: Call One Breeds
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /cat/byname/lulu:
+    get:
+      tags:
+        - default
+      summary: Call One Name
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

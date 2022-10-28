@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "2c83ab3d-cbf9-4b34-8a96-62e93faf8449",
+		"name": "Sports",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21894009"
+	},
+	"item": [
+		{
+			"name": "Register Sport",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sportsName\" : \"Basketball\",\r\n    \"playersInOneTeam\" : 5,\r\n    \"matchDuration\" : 48\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sidumb.herokuapp.com/sports/save",
+					"protocol": "https",
+					"host": [
+						"sidumb",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"sports",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Sports",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sidumb.herokuapp.com/sports/list",
+					"protocol": "https",
+					"host": [
+						"sidumb",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"sports",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Sports",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idSports\" : 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sidumb.herokuapp.com/sports/delete",
+					"protocol": "https",
+					"host": [
+						"sidumb",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"sports",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Sports",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sportsName\" : \"Basketball\",\r\n    \"playersInOneTeam\" : 5,\r\n    \"matchDuration\" : 48\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sidumb.herokuapp.com/sports/update",
+					"protocol": "https",
+					"host": [
+						"sidumb",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"sports",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Call One Sports",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sidumb.herokuapp.com/sports/byname/Tennis Solo",
+					"protocol": "https",
+					"host": [
+						"sidumb",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"sports",
+						"byname",
+						"Tennis Solo"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
