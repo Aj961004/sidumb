@@ -1,0 +1,75 @@
+openapi: 3.0.0
+info:
+  title: Sports
+  version: 1.0.0
+servers:
+  - url: https://sidumb.herokuapp.com
+paths:
+  /sports/save:
+    post:
+      tags:
+        - default
+      summary: Register Sport
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                sportsName: Basketball
+                playersInOneTeam: 5
+                matchDuration: 48
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /sports/list:
+    get:
+      tags:
+        - default
+      summary: List Sports
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /sports/delete:
+    delete:
+      tags:
+        - default
+      summary: Delete Sports
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /sports/update:
+    put:
+      tags:
+        - default
+      summary: Update Sports
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                sportsName: Basketball
+                playersInOneTeam: 5
+                matchDuration: 48
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /sports/byname/Tennis Solo:
+    get:
+      tags:
+        - default
+      summary: Call One Sports
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
